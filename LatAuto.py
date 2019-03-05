@@ -299,11 +299,11 @@ if __name__ == '__main__':
                         #fencetest=bool(testcontract.transact({'from':web3.eth.coinbase}).Fence())
                         fencetest=True
                         if fencetest == True:
-                                dist1=distance()
-                                dist2=distance()
-                                dist3=distance()
-                                dist= (dist1 + dist2 + dist3)/3
-                                distTx=int(dist1)
+                                #dist1=distance()
+                                #dist2=distance()
+                                #dist3=distance()
+                                #dist= (dist1 + dist2 + dist3)/3
+                                #distTx=int(dist1)
                                 #Nodecount=int(testcontract.call().Nodecount())
                                 #print("NodeCount=%d" % Nodecount)
                                 #Floodcount=int(testcontract.call().floodcount())
@@ -315,12 +315,12 @@ if __name__ == '__main__':
                                         print (blockno)
                                         timestamp = int (time.time()*1000.0)
                                         testcontract.transact({'from': web3.eth.coinbase, 'gas': 200000, 'value': int(5)}).SendWL()
-                                        if distTx <= 10:
-                                                print ("time of flood : ")
-                                                print (timestamp)
-                                                a.append (timestamp)
-                                                c = c+1
-                                                b.append (c)
+                                        #if distTx <= 10:
+                                        print ("time of flood : ")
+                                        print (timestamp)
+                                        a.append (timestamp)
+                                        c = c+1
+                                        b.append (c)
                                         while blockno >= int(web3.eth.blockNumber):
                                                  count=count+1
                                         blockno = (web3.eth.blockNumber)
