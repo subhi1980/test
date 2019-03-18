@@ -13,6 +13,7 @@ import json
 import web3
 import subprocess
 import numpy as np
+from random import randint
 from os import system
 from web3 import Web3, HTTPProvider, IPCProvider
 from web3.contract import Contract
@@ -47,7 +48,7 @@ GPIO.setup(LED3, GPIO.OUT)
 GPIO.setup(LED4, GPIO.OUT)
 GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.output(GPIO_KEY, False)
-C_ADDR_1 = '0x2771ecac5523f44c8a7133ecd572b9be0b0a7cd4'
+C_ADDR_1 = '0xf5cb8dfce2fb230d1842264a96c4f1ddb469c399'
 C_ADDR = Web3.toChecksumAddress(C_ADDR_1)
 submit_block = True
 web3=Web3(IPCProvider("/home/pi/10sec_floodblock/n1/geth.ipc"))
@@ -313,6 +314,8 @@ if __name__ == '__main__':
                                 #print("Water Level % d" % int(distTx))
                                 if blockno % 2==0:
                                         print (blockno)
+                                        #time.sleep (randint (0, 18))
+                                        time.sleep (19.4)
                                         timestamp = int (time.time()*1000.0)
                                         testcontract.transact({'from': web3.eth.coinbase, 'gas': 200000, 'value': int(5)}).SendWL()
                                         #if distTx <= 10:
