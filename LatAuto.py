@@ -49,7 +49,7 @@ GPIO.setup(LED3, GPIO.OUT)
 GPIO.setup(LED4, GPIO.OUT)
 GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.output(GPIO_KEY, False)
-C_ADDR_1 = '0xb95f7bcdb5cb7009bb3fc87910afac0bd15ea929'
+C_ADDR_1 = '0x331327e4359e77be9f2ab688158a662a0ee770d1'
 C_ADDR = Web3.toChecksumAddress(C_ADDR_1)
 submit_block = True
 web3=Web3(IPCProvider("/home/pi/5sec_floodblock/n1/geth.ipc"))
