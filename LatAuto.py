@@ -316,7 +316,7 @@ if __name__ == '__main__':
                                 if blockno % 2==0:
                                         print (blockno)
                                         time.sleep (random.uniform (0, 9.4))
-                                        #time.sleep (10.4)
+                                        #time.sleep (9.4)
                                         timestamp = int (time.time()*1000.0)
                                         testcontract.transact({'from': web3.eth.coinbase, 'gas': 200000, 'value': int(5)}).SendWL()
                                         #if distTx <= 10:
