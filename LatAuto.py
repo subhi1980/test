@@ -51,7 +51,7 @@ GPIO.output(GPIO_KEY, False)
 C_ADDR_1 = '0xf5cb8dfce2fb230d1842264a96c4f1ddb469c399'
 C_ADDR = Web3.toChecksumAddress(C_ADDR_1)
 submit_block = True
-web3=Web3(IPCProvider("/home/pi/10sec_floodblock/n1/geth.ipc"))
+web3=Web3(IPCProvider("/home/pi/15sec_floodblock/n1/geth.ipc"))
 web3.middleware_stack.inject(geth_poa_middleware, layer=0)
 
 
