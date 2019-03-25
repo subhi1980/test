@@ -49,10 +49,10 @@ GPIO.setup(LED3, GPIO.OUT)
 GPIO.setup(LED4, GPIO.OUT)
 GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.output(GPIO_KEY, False)
-C_ADDR_1 = '0xf5cb8dfce2fb230d1842264a96c4f1ddb469c399'
+C_ADDR_1 = '0xb2d85d63d708801bb89ab85b5f3ddb75f9d12e10'
 C_ADDR = Web3.toChecksumAddress(C_ADDR_1)
 submit_block = True
-web3=Web3(IPCProvider("/home/pi/1sec_floodblock/n1/geth.ipc"))
+web3=Web3(IPCProvider("/home/pi/20sec_floodblock/n1/geth.ipc"))
 web3.middleware_stack.inject(geth_poa_middleware, layer=0)
 
 
@@ -315,7 +315,7 @@ if __name__ == '__main__':
                                 #print("Water Level % d" % int(distTx))
                                 if blockno % 2==0:
                                         print (blockno)
-                                        time.sleep (random.uniform (0, 0.5))
+                                        #time.sleep (random.uniform (0, 0.5))
                                         #time.sleep (0.6)
                                         timestamp = int (time.time()*1000.0)
                                         testcontract.transact({'from': web3.eth.coinbase, 'gas': 200000, 'value': int(5)}).SendWL()
